@@ -1,0 +1,89 @@
+import random
+x="rock"
+y="paper"
+z="scissors"
+j=0
+def tryagain():
+    choices=[x,y,z]
+    count=0
+    count1=0
+    for i in range(0,3):
+        computer=random.choice(choices)
+        player=None
+        if(j==1):
+            while player not in choices:
+                player=input("Choose Rock,Paper,Scissors?:").lower()
+        elif(j==2):
+            while player not in choices:
+                player=input("Choose Snake,Water,Gun?: ").lower()
+        if player == computer:
+            print("Computer: ",computer)
+            print("Player: ",player)
+            print("Tie!")
+            count1+=count+1
+        elif player == x:
+            if computer == y:
+                print("Computer: ",computer)
+                print("Player: ",player)
+                print("You lose!")
+            if computer == z:
+                print("Computer: ",computer)
+                print("Player: ",player)
+                print("You win!")
+                count+=count+1
+        elif player == z:
+            if computer == x:
+                print("Computer: ",computer)
+                print("Player: ",player)
+                print("You lose!")
+            if computer == y:
+                print("Computer: ",computer)
+                print("Player: ",player)
+                print("you win!")
+                count+=count+1
+        elif player == y:
+            if computer == x:
+                print("Computer: ",computer)
+                print("Player: ",player)
+                print("You win!")
+                count+=count+1
+            if computer == z:
+                print("Computer: ",computer)
+                print("Player: ",player)
+                print("you lose!")
+    if count>=2:
+        print("You win the best of 3")
+    elif count1==2 and count==1:
+        print("You win the best of 3")
+    elif count1==1 and count==1:
+        print("You tie the best of 3")
+    elif(count1==3):
+        print("You tie the best of 3")
+    else:
+        print("You lose the best of 3")
+
+j=int(input("Press 1 for Rock,Paper,Scissors or 2 for Snake,Water,Gun"))
+if(j==1):
+    tryagain()
+if(j==2):
+    x="snake"
+    z="water"
+    y="gun"
+    tryagain()
+
+for i in range(0,100):
+    q=input("Do you want to play again?")
+    if q=="yes":
+        j=int(input("Press 1 for Rock,Paper,Scissors or 2 for Snake,Water,Gun"))
+        if(j==1):
+            x="rock"
+            y="paper"
+            z="scissors"
+            tryagain()
+        if(j==2):
+            x="snake"
+            z="water"
+            y="gun"
+            tryagain()
+else:
+    print("Thanks for playing")
