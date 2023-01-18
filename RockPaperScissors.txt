@@ -85,5 +85,6 @@ for i in range(0,100):
             z="water"
             y="gun"
             tryagain()
-else:
-    print("Thanks for playing")
+    else:
+        print("Thanks for playing")
+        break;
